@@ -1,0 +1,24 @@
+{
+  "name": "my-trainin-ml-on-js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "simple1.js",
+  "dependencies": {
+    "brain.js": "2.0.0-beta.4",
+    "express": "4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/popetrov/my-trainin-ML-on-JS.git"
+  },
+  "author": "popetrov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/popetrov/my-trainin-ML-on-JS/issues"
+  },
+  "homepage": "https://github.com/popetrov/my-trainin-ML-on-JS#readme"
+}
