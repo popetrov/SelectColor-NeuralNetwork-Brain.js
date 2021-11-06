@@ -2,6 +2,7 @@ let brain = require('brain.js');
 let express = require('express');
 
 let net = new brain.NeuralNetwork();
+let color = 'red';
 
 net.train(
 	[
@@ -279,9 +280,9 @@ net.train(
 		},
 	],
 	{
-		iterations: 20000,
-		learningRate: 0.3,
-		momentum: 0.1,
+		iterations: 100000,
+		learningRate: 0.5,
+		momentum: 0.5,
 	}
 );
 
@@ -299,7 +300,7 @@ function getCoefficientB(r, g, b) {
 
 function selectColor(output) {
 	let max = 0;
-	let color = 'red';
+
 	for (let i in output) {
 		let value = output[i];
 		if (value > max) {
@@ -313,9 +314,9 @@ function selectColor(output) {
 let app = express();
 app.use('/', function (req, res) {
 	let output = net.run({
-		r: getCoefficientR(255, 230, 105),
-		g: getCoefficientG(255, 230, 105),
-		b: getCoefficientB(255, 230, 105),
+		r: getCoefficientR(255, 237, 72),
+		g: getCoefficientG(255, 237, 72),
+		b: getCoefficientB(255, 237, 72),
 	});
 	res.send(selectColor(output));
 });
