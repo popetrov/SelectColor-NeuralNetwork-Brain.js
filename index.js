@@ -237,6 +237,46 @@ net.train(
 			},
 			output: { white: 1 },
 		},
+		{
+			input: {
+				r: getCoefficientR(173, 255, 47),
+				g: getCoefficientG(173, 255, 47),
+				b: getCoefficientB(173, 255, 47),
+			},
+			output: { black: 1 },
+		},
+		{
+			input: {
+				r: getCoefficientR(0, 100, 0),
+				g: getCoefficientG(0, 100, 0),
+				b: getCoefficientB(0, 100, 0),
+			},
+			output: { white: 1 },
+		},
+		{
+			input: {
+				r: getCoefficientR(50, 205, 50),
+				g: getCoefficientG(50, 205, 50),
+				b: getCoefficientB(50, 205, 50),
+			},
+			output: { black: 1 },
+		},
+		{
+			input: {
+				r: getCoefficientR(60, 179, 113),
+				g: getCoefficientG(60, 179, 113),
+				b: getCoefficientB(60, 179, 113),
+			},
+			output: { white: 1 },
+		},
+		{
+			input: {
+				r: getCoefficientR(85, 107, 47),
+				g: getCoefficientG(85, 107, 47),
+				b: getCoefficientB(85, 107, 47),
+			},
+			output: { white: 1 },
+		},
 	],
 	{
 		iterations: 20000,
@@ -259,7 +299,7 @@ function getCoefficientB(r, g, b) {
 
 function selectColor(output) {
 	let max = 0;
-	let color = 'black';
+	let color = 'red';
 	for (let i in output) {
 		let value = output[i];
 		if (value > max) {
@@ -273,9 +313,9 @@ function selectColor(output) {
 let app = express();
 app.use('/', function (req, res) {
 	let output = net.run({
-		r: getCoefficientR(174, 255, 176),
-		g: getCoefficientG(174, 255, 176),
-		b: getCoefficientB(174, 255, 176),
+		r: getCoefficientR(255, 230, 105),
+		g: getCoefficientG(255, 230, 105),
+		b: getCoefficientB(255, 230, 105),
 	});
 	res.send(selectColor(output));
 });
